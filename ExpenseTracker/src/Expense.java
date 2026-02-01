@@ -5,9 +5,9 @@
 - description
  */
 public class Expense {
-    double amount;
-    String category;
-    String description;
+    private double amount;
+    private String category;
+    private String description;
 
     public void setAmount(double amount){
         this.amount = amount;

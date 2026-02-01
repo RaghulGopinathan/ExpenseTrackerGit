@@ -12,6 +12,7 @@ public class ExpenseTracker{
 
 
     ArrayList<Expense> arrList = new ArrayList<Expense>();
+    double totalExpense;
 
     public void addExpense(double amount, String category, String description){
         Expense expenseObj = new Expense();
@@ -20,13 +21,19 @@ public class ExpenseTracker{
         expenseObj.setDescription(description);
 
         arrList.add(expenseObj);
+        totalExpense+= expenseObj.getAmount();
     }
 
     public void viewExpense()
     {
         for (Expense x : arrList)
         {
-            System.out.println("Amount: "+x.getAmount() +"Category: "+x.getCategory()+"Description: "+x.getDescription());
+            System.out.println("\nAmount: "+x.getAmount() +"\nCategory: "+x.getCategory()+"\nDescription: "+x.getDescription());
         }
+
+    }
+
+    public double getTotalExpense(){
+        return totalExpense;
     }
 }
