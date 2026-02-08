@@ -12,7 +12,8 @@ public class Main{
 
         while (true)
         {
-            System.out.print("\nSelect any option belows:\n"+"1. Add Expense"+"\n2. View Expense"+"\n3. Show Total"+"\n4. Exit"+"\nEnter your choice ->");
+            System.out.print("Select any option belows:\n"+"1. Add Expense"+"\n2. View Expense"+"\n3. Show Total"
+                    +"\n4. Exit"+"\n\nEnter your choice ->");
             choice=sc.nextInt();
             switch (choice)
             {
@@ -26,13 +27,14 @@ public class Main{
                     System.out.print("Enter the description= ");
                     description = sc.nextLine();
                     expenseTracker.addExpense(amount,category,description);
+                    System.out.println();
                     break;
                 }
                 case 2:
                     expenseTracker.viewExpense();
                     break;
                 case 3:
-                    System.out.println("Total Expense: "+expenseTracker.getTotalExpense());
+                    System.out.println("Total Expense: "+expenseTracker.getTotalExpense()+"\n");
                     break;
                 case 4:
                     return;

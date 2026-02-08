@@ -28,7 +28,7 @@ public class ExpenseTracker{
     {
         for (Expense x : arrList)
         {
-            System.out.println("\nAmount: "+x.getAmount() +"\nCategory: "+x.getCategory()+"\nDescription: "+x.getDescription());
+            System.out.println("Amount: "+x.getAmount() +"\nCategory: "+x.getCategory()+"\nDescription: "+x.getDescription()+"\n");
         }
 
     }
