@@ -12,14 +12,14 @@ public class Main{
 
         while (true)
         {
-            System.out.println("\nMenu:\n1.Add student\n2.View all students\n3.Search student by ID\n4.Exit\n");
-            System.out.print("Enter your choice -> ");
+            System.out.println("\nMenu:\n1.Add student\n2.View all students\n3.Search student by ID\n4.Update Marks\n5.Delete student\n6.Exit");
+            System.out.print("\nEnter your choice -> ");
             choice=sc.nextInt();
             switch (choice)
             {
                 case 1:
                 {
-                    System.out.print("Enter student id: ");
+                    System.out.print("\nEnter student id: ");
                     id = sc.nextInt();
                     sc.nextLine();
                     System.out.print("Enter student Name: ");
@@ -38,13 +38,39 @@ public class Main{
                 case 3:
                 {
                     System.out.print("Enter the id: ");
-                    studentManagementSystem.searchStudentById(sc.nextInt());
+                    if(studentManagementSystem.searchStudentById(sc.nextInt()))
+                        System.out.println("Student found");
+                    else
+                        System.out.println("Student not found!");
+
                     break;
                 }
                 case 4:
                 {
+                    System.out.print("Enter the id: ");
+                    int tempid = sc.nextInt();
+                    System.out.print("Enter the Mark: ");
+                    double newMark = sc.nextDouble();
+                    if(studentManagementSystem.updateMarks(tempid,newMark))
+                        System.out.println("Mark updated!");
+                    else
+                        System.out.println("Student not found!");
+                    break;
+                }
+                case 5:
+                {
+                    System.out.print("Enter the id: ");
+                    if(studentManagementSystem.deleteStudent(sc.nextInt()))
+                        System.out.println("Entry deleted");
+                    else
+                        System.out.println("Student not found!");
+                    break;
+                }
+                case 6:
+                {
                     return;
                 }
+
             }
         }
 

@@ -19,4 +19,9 @@ public class Student {
         return this.marks;
     }
 
+    public void setMarks(double newMark)
+    {
+        this.marks = newMark;
+    }
+
 }
